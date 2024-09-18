@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=Source_Han_Serif:400,600:Source_Han_Serif" />
+</head>
+<body>
+    <h1>Optimized Image to Text with RLE</h1>
+
+    <!-- Section: Image to Text -->
+    <section>
+        <!-- 输入图片 -->
+        <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg, image/webp" />
+
+        <button id="compressBtn">Compress Image to TXT</button>
+        <button id="decompressBtn">Decompress TXT to Image</button>
+
+        <!-- 用于显示图片 -->
+        <canvas id="imageCanvas" style="display: none;"></canvas>
+
+        <!-- 下载生成的TXT文件 -->
+        <a id="downloadLink" style="display: none;">Download Compressed TXT</a>
+
+        <!-- 选择压缩的TXT文件 -->
+        <input type="file" id="txtInput" style="display: none;" />
+
+        <!-- 显示解压后的图片 -->
+        <img id="outputImage" style="display: none;" />
+    </section>
+
+    <!-- Section: Image Blurring -->
+    <section class="container">
+        <h1>Image Blurring and Display</h1>
+
+        <!-- 上传图片 -->
+        <section class="input-group">
+            <input type="file" id="imageInput2" accept="image/png, image/jpeg, image/jpg, image/webp" />
+        </section>
+
+        <!-- 输入模糊块大小 -->
+        <section class="input-group">
+            <label for="imageWidth">Image Width: </label>
+            <input type="number" id="imageWidth" readonly />
+        </section>
+        <section class="input-group">
+            <label for="imageHeight">Image Height: </label>
+            <input type="number" id="imageHeight" readonly />
+        </section>
+        <section class="input-group">
+            <label for="blockSize">Blur Block Size: </label>
+            <input type="number" id="blockSize" value="5" min="1" />
+        </section>
+
+        <button id="processBtn">Blur and Display Image</button>
+
+        <!-- 用于显示图片 -->
+        <canvas id="imageCanvas2"></canvas>
+    </section>
+
+    <!-- Section: Image Encryption -->
+    <h1>Chaos-based Image Encryption and Decryption</h1>
+
+    <!-- 上传图片 -->
+    <section>
+        <h2>Upload Images for Encryption</h2>
+        <input type="file" id="imageInput3" accept="image/png, image/jpeg, image/jpg, image/webp" multiple />
+        <button id="encryptBtn">Encrypt Images to JPG</button>
+    </section>
+
+    <!-- 上传加密图片以解密 -->
+    <section>
+        <h2>Upload Encrypted Images for Decryption</h2>
+        <input type="file" id="encryptedImageInput" accept="image/png, image/jpeg, image/jpg, image/webp" multiple />
+        <button id="decryptBtn">Decrypt Images</button>
+    </section>
+
+    <!-- 用于显示加密后的图片 -->
+    <section id="encryptedImagesContainer"></section>
+
+    <!-- 显示下载链接 -->
+    <section id="downloadLinksContainer" style="display: none;"></section>
+
+    <!-- Floating button for switching between sections -->
+    <div class="floating-button" id="floatingButton">
+        <span>☰</span>
+        <div class="tooltip">
+            <a href="#section-img-to-txt" id="nav-img-to-txt">Image to TXT</a>
+            <a href="#section-img-blur" id="nav-img-blur">Image Blurring</a>
+            <a href="#section-img-encrypt" id="nav-img-encrypt">Image Encryption</a>
+            <a href="#section-img-compress" id="nav-img-compress">Image Compression</a>
+        </div>
+    </div>
+    <script src="imgblur.js"></script>
+    <script src="imgencrypt.js"></script>
+    <script src="imgtxt.js"></script>
+    <script src="floatingButton.min.js"></script>
+</body>
+</html>
