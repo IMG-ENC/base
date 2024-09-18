@@ -11,7 +11,7 @@
     <h1>Optimized Image to Text with RLE</h1>
 
     <!-- Section: Image to Text -->
-    <section>
+    <section id="img-to-txt">
         <!-- 输入图片 -->
         <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg, image/webp" />
 
@@ -32,7 +32,7 @@
     </section>
 
     <!-- Section: Image Blurring -->
-    <section class="container">
+    <section id="img-blur">
         <h1>Image Blurring and Display</h1>
 
         <!-- 上传图片 -->
@@ -64,7 +64,7 @@
     <h1>Chaos-based Image Encryption and Decryption</h1>
 
     <!-- 上传图片 -->
-    <section>
+    <section id="img-encrypt">
         <h2>Upload Images for Encryption</h2>
         <input type="file" id="imageInput3" accept="image/png, image/jpeg, image/jpg, image/webp" multiple />
         <button id="encryptBtn">Encrypt Images to JPG</button>
@@ -87,15 +87,14 @@
     <div class="floating-button" id="floatingButton">
         <span>☰</span>
         <div class="tooltip">
-            <a href="#section-img-to-txt" id="nav-img-to-txt">Image to TXT</a>
-            <a href="#section-img-blur" id="nav-img-blur">Image Blurring</a>
-            <a href="#section-img-encrypt" id="nav-img-encrypt">Image Encryption</a>
-            <a href="#section-img-compress" id="nav-img-compress">Image Compression</a>
+            <a href="#img-to-txt" id="nav-img-to-txt">Image to TXT</a>
+            <a href="#img-blur" id="nav-img-blur">Image Blurring</a>
+            <a href="#img-encrypt" id="nav-img-encrypt">Image Encryption</a>
         </div>
     </div>
     <script src="imgblur.js"></script>
     <script src="imgencrypt.js"></script>
     <script src="imgtxt.js"></script>
-    <script src="floatingButton.min.js"></script>
+    <script src="floatingButton.js"></script>
 </body>
 </html>
